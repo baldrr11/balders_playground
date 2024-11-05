@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Clicker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+        }
+        #cookie {
+            width: 200px;
+            height: 200px;
+            background-color: #d2691e;
+            border-radius: 50%;
+            margin: 20px auto;
+            cursor: pointer;
+            display: block;
+        }
+        #cookieCount {
+            font-size: 36px;
+            margin-top: 20px;
+        }
+        #upgrade {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ffcc00;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #upgrade:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Cookie Clicker</h1>
+
+    <div id="cookie"></div>
+
+    <div id="cookieCount">Cookies: 999999</div>
+
+    <button id="upgrade" disabled>Buy Cookie Farm (Cost: 50 cookies)</button>
+
+    <script>
+        // Initializing game st

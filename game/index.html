@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klik på knappen spil</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #gameButton {
+            padding: 20px 40px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #gameButton:active {
+            background-color: #45a049;
+        }
+
+        #score {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Klik på knappen!</h1>
+    <button id="gameButton">Klik mig!</button>
+    <p id="score">Score: 0</p>
+
+    <script>
+        // Variabler
+        let score = 0;
+        const gameButton = document.getElementById("gameButton");
+        const scoreDisplay = document.getElementById("score");
+
+        // Funktion til at ændre knappen og score
+        function changeButton() {
+            // Skift knapfarve og position
+            const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            gameButton.style.backgroundColor = randomColor;
+
+            const randomTop = Math.floor(Math.random() * window.innerHeight) + "px";
+            const randomLeft = Math.floor(Math.random() * window.innerWidth) + "px";
+
+            gameButton.style.position = "absolute";
+            gameButton.style.top = randomTop;
+            gameButton.style.left = randomLeft;
+
+            // Opdater score
+            score++;
+            scoreDisplay.textContent = "Score: " + score;
+        }
+
+        // Når knappen klikkes, ændres den
+        gameButton.addEventListener("click", changeButton);
+    </script>
+
+</body>
+</html>
